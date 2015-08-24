@@ -17,8 +17,8 @@ formBuilderController.controller('loginCtrl', ['$scope', 'Auth', '$state', 'ngNo
                     $scope.formsArray.push($scope.studies[key]);
                     $scope.keyArray.push(key);
                 };
-                $scope.activeStudyId = $scope.keyArray[0];
-                $scope.form_id = $scope.formsArray[0];
+                //$scope.activeStudyId = $scope.keyArray[0];
+                $scope.form_id = 312; //HARD CODING THE FORM IT SHOULD GO TO
                 if ($scope.form_id) $state.go('form', {
                     id: $scope.form_id,
                     studyId: $scope.activeStudyId
