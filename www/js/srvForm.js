@@ -193,12 +193,12 @@ fbService.factory('responseService', ['Restangular', '$filter', 'formService', f
                         if (inputObj)
                             entryObj.value = inputObj.value;
                     });
-                    return service.updateResponse(id, response, studyId);
+                    return service.updateResponse(id, response);
                 })
             });
         },
         updateResponse: function(id, form, studyId) {
-            return Restangular.all("formResponses").all(id).customPUT(form, "", {removeActiveStudy: studyId});
+            return Restangular.all("formResponses").all(id).customPUT(form);
         },
         deleteResponse: function(rid) {
             return Restangular.all("formResponses").one(rid).remove();

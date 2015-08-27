@@ -390,7 +390,6 @@ formBuilderController.controller('builderCtrl', ['$scope', '$builder', '$validat
             });
         }
         $scope.saveButton = function() {
-            console.log(form);
             if ($scope.form_id !== 0 && form && form.enabled)
                 bootbox.dialog({
                     title: "Save Form",
@@ -458,9 +457,16 @@ formBuilderController.controller('formCtrl', ['$scope', '$builder', '$validator'
 
         $scope.form = $builder.forms[$scope.id];
         $scope.input = [];
+        $scope.defaultValue = {};
+        if (localStorage.getItem("name"))
+            $scope.defaultValue[form.questions[1].question_id] = [localStorage.getItem("name").split(",")[0].replace(/ /g,''),localStorage.getItem("name").split(",")[1].replace(/ /g,'')];
+        if (localStorage.getItem("PSID"))
+            $scope.defaultValue[form.questions[2].question_id] = localStorage.getItem("PSID").toString();
         $scope.submit = function() {
             $validator.validate($scope, $scope.id).success(function() {
                 responseService.newResponse($scope.input, $scope.id, $scope.uid, $stateParams.studyId).then(function() {
+                    localStorage.setItem("name", $scope.input[0].value);
+                    localStorage.setItem("PSID", $scope.input[1].value);
                     ngNotify.set("Form submission success!", "success");
                     $state.go("secure.home");
                     $scope.input = null;
