@@ -588,6 +588,7 @@ formBuilderController.controller('scannerCtrl',
                 .scan()
                 .then(function(result) {
                     $scope.$parent.inputText = result.text;
+                    $scope.inputText = result.text;
                 }, function(error) {
 
                 });
