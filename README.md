@@ -17,3 +17,6 @@ FormBuilder is a dynamic form building web application that works with dynamic f
 5. Run `ionic resources` to generate icons and splash screens from resources/icon.png and resources/splash.png
 
 6. Run `cordova run android` or  `cordova run ios`
+
+### Building for Production
+Follow instructions [here](https://github.com/DataAnalyticsinStudentHands/DASH-Documentation/blob/master/Code%20Development/Frontend/How-to-Build-Mobile-Applications-for-Production.md), but before performing a `cordova build android --release` add [this file](https://gist.github.com/CarlSteven/3ec93b27003c3859c118) to {repo_base}\platforms\android\
