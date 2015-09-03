@@ -254,14 +254,14 @@ formBuilderController.controller('userResponseCtrl', ['$scope', 'Auth', '$state'
     }
 ]);
 
-formBuilderController.controller('finishedCtrl', ['$scope', 'form', '$timeout',
-    function($scope, form, $timeout) {
+formBuilderController.controller('finishedCtrl', ['$scope', 'form', '$timeout', '$state',
+    function($scope, form, $timeout, $state) {
         $scope.form = form;
-        /*if ($scope.form.redirect_url) {
+        if ($scope.form.redirect_url) {
             $timeout(function() {
-                location.replace(form.redirect_url);
-            }, 50000)
-        }*/
+                $state.go("secure.home");
+            }, 5000)
+        }
     }
 ]);
 
