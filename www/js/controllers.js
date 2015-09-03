@@ -468,7 +468,7 @@ formBuilderController.controller('formCtrl', ['$scope', '$builder', '$validator'
                     localStorage.setItem("name", $scope.input[0].value);
                     localStorage.setItem("PSID", $scope.input[1].value);
                     ngNotify.set("Form submission success!", "success");
-                    $state.go("secure.home");
+                    $state.go("finished", {"id": $scope.form_obj.id});
                     $scope.input = null;
                 }, function() {
                     ngNotify.set("Submission failed!", "error");
