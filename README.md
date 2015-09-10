@@ -11,6 +11,7 @@ FormBuilder is a dynamic form building web application that works with dynamic f
 3. Add the follow plugins using `cordova plugin add <PLUGIN_NAME>`
   - https://github.com/wildabeast/BarcodeScanner.git (NOTE: Only needed if planning to use QR Code component in deployed mobile application)
   - cordova-plugin-whitelist
+  - cordova-plugin-splashscreen
 
 4. Run `cordova platform add android` or  `cordova platform add ios`
 
