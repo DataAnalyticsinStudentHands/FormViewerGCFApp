@@ -16,7 +16,8 @@ var databaseModule = angular.module('databaseModule', [
     'angularFileUpload',
     'ui.bootstrap.datetimepicker',
     'ui.grid',
-    'ui.grid.resizeColumns'
+    'ui.grid.resizeColumns',
+    'ngCordova'
 ]);
 databaseModule.config(
     function($stateProvider, $urlRouterProvider) {
@@ -76,21 +77,9 @@ databaseModule.config(
                 //If the map is empty, stay in home, else go to the form.
                 checkForms: function(userService, $state) {
                     return userService.getMyUser().then(function(data) {
-                        var studies = data.activeStudies; //Map of activeForms
-                        var formsArray = new Array();
-                        var keyArray = new Array();
-                        for (var key in studies) {
-                            formsArray.push(studies[key]);
-                            keyArray.push(key);
-                        };
-                        var activeStudyId = keyArray[0];
-                        var form_id = formsArray[0];
-                        if (form_id) {
-                            $state.go('form', {
-                                id: form_id,
-                                studyId: activeStudyId
-                            });
-                        }
+                        $state.go('form', {
+                            id: 312
+                        },{reload:true});
                     });
                 }
             },
@@ -244,6 +233,11 @@ databaseModule.run(['Restangular', '$rootScope', 'Auth', '$q', '$state', '$build
             return Restangular;
         };
         $rootScope.isAuthenticated = function(authenticate) {
+            if (!Auth.hasCredentials()) {
+                $rootScope.isGuest = true;
+                Auth.setCredentials("Guest", "21d7dcf66c3e4ad8daf654c8732791453a79408d312396dc25ec90453597f5bdf7dca5ac87b8c22c140d6b4dd17753bd2640b517d486d34d9e52d1a444560a93");
+                Auth.confirmCredentials();
+            }
             userService.getMyUser().then(function(result) {
                 $rootScope.uid = result.id.toString();
                 $rootScope.uin = result.username.toString();
@@ -382,5 +376,13 @@ databaseModule.run(['Restangular', '$rootScope', 'Auth', '$q', '$state', '$build
             templateUrl: 'partials/component/tmplFileUpload.html',
             popoverTemplateUrl: 'partials/component/popFileUpload.html'
         });
+        $builder.registerComponent('QRscanner', {
+            group: 'Other',
+            label: 'Scan A QR Code',
+            required: false,
+            templateUrl: 'partials/component/tmplQRscanner.html',
+            popoverTemplateUrl: 'partials/component/popQRscanner.html'
+        });
+
     }
 ]);

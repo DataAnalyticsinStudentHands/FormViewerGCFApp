@@ -1,7 +1,7 @@
 {
-  "name": "form-builder",
+  "name": "grand-challenges-forum",
   "appPath": "www",
-  "version": "0.0.0",
+  "version": "1",
   "dependencies": {
     "angular": "~1.2.21",
     "angular-cookies": "~1.2",
@@ -15,7 +15,8 @@
     "ng-file-upload": "~3.0.4",
     "ng-file-upload-shim": "~3.0.4",
     "angular-ui-grid": "~3.0.0-rc.19",
-    "angular-bootstrap-datetimepicker": "latest"
+    "angular-bootstrap-datetimepicker": "latest",
+    "ngCordova": "~0.1.20-alpha"
   },
   "resolutions": {
     "angular": "1.4.4"
