@@ -3,7 +3,7 @@ Form Viewer App
 
 FormBuilder is a dynamic form building web application that works with dynamic forms and provides sharing functionality. It communicates to a Java Backend located in FormBuilderBackend repo.
 
-### Getting Started
+### How to Build
 1. Run `bower install`. This uses `bower.json` and install local dependencies.
 
 2. Run `ionic serve`. This uses `ionic.xml` and will serve as local node server. Live updates when you make changes to the code.
@@ -11,6 +11,12 @@ FormBuilder is a dynamic form building web application that works with dynamic f
 3. Add the follow plugins using `cordova plugin add <PLUGIN_NAME>`
   - https://github.com/wildabeast/BarcodeScanner.git (NOTE: Only needed if planning to use QR Code component in deployed mobile application)
   - cordova-plugin-whitelist
+  - cordova-plugin-splashscreen
+
+    #### iOS ONLY - To add compatibility for iOS 9
+    Install plugin `@telerik/cordova-plugin-wkwebview` and run `cordova ios prepare`
+    Disable Bitcode in build by `Project > Build Settings > Build Options > Enable Bitcode = No`
+    #### END - iOS ONLY
 
 4. Run `cordova platform add android` or  `cordova platform add ios`
 
