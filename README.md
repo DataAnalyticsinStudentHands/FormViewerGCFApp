@@ -12,10 +12,11 @@ FormBuilder is a dynamic form building web application that works with dynamic f
   - https://github.com/wildabeast/BarcodeScanner.git (NOTE: Only needed if planning to use QR Code component in deployed mobile application)
   - cordova-plugin-whitelist
   - cordova-plugin-splashscreen
-#### iOS ONLY - To add compatibility for iOS 9
-Install plugin `@telerik/cordova-plugin-wkwebview` and run `cordova ios prepare`
-Disable Bitcode in build by `Project > Build Settings > Build Options > Enable Bitcode = No`
-#### END - iOS ONLY
+
+    #### iOS ONLY - To add compatibility for iOS 9
+    Install plugin `@telerik/cordova-plugin-wkwebview` and run `cordova ios prepare`
+    Disable Bitcode in build by `Project > Build Settings > Build Options > Enable Bitcode = No`
+    #### END - iOS ONLY
 
 4. Run `cordova platform add android` or  `cordova platform add ios`
 
