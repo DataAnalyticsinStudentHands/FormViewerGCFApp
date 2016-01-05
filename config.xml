@@ -5,7 +5,7 @@
         An application for UH Honors College Grand Challenges Forum.
   </description>
   <author email="dash@uh.edu" href="http://housuggest.org/DASH">
-        Data Analytics in Student Hands&#xD;
+        Data Analytics in Student Hands
   </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -33,4 +33,7 @@
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="StatusBarOverlaysWebView" value="false"/>
+  <preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
+  <preference name="StatusBarStyle" value="default"/>
 </widget>
