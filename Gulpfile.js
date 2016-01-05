@@ -34,3 +34,27 @@ gulp.task('deploy-prod', ['clean', 'setup', 'deploy'], function() {
 gulp.task('setup', [], function() {
     exec('bower install')
 });
+
+gulp.task('android-setup', [], function() {
+    exec('cordova platform rm android');
+    exec('ionic resources');
+    exec('cordova platform add android');
+    exec('cordova build android');
+});
+
+gulp.task('android-build', [], function() {
+    exec('ionic resources');
+    exec('cordova build android');
+});
+
+gulp.task('ios-setup', [], function() {
+    exec('cordova platform rm ios');
+    exec('ionic resources');
+    exec('cordova platform add ios');
+    exec('cordova build ios');
+});
+
+gulp.task('ios-build', [], function() {
+    exec('ionic resources');
+    exec('cordova build ios');
+});
