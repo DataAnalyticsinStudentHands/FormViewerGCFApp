@@ -6,10 +6,11 @@
 // the identifier, the filesystem location 
 // or the URL
 var pluginlist = [
+    "phonegap-plugin-barcodescanner",
     "cordova-plugin-statusbar",
 	"cordova-plugin-whitelist"
 ];
- 
+
 // no need to configure below
  
 var fs = require('fs');
