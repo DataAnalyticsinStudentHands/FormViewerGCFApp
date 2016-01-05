@@ -7,6 +7,7 @@
 // or the URL
 var pluginlist = [
     "phonegap-plugin-barcodescanner",
+    "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
 	"cordova-plugin-whitelist"
 ];
@@ -19,7 +20,7 @@ var sys = require('sys')
 var exec = require('child_process').exec;
  
 function puts(error, stdout, stderr) {
-    sys.puts(stdout)
+    console.log(stdout)
 }
  
 pluginlist.forEach(function(plug) {
