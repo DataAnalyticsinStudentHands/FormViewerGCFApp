@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="edu.uh.honors.grandchallenges" version="1" xmlns="http://www.w3.org/ns/widgets">
+<widget id="edu.uh.honors.grandchallenges" version="1.1" xmlns="http://www.w3.org/ns/widgets">
   <name>Grand Challenges Forum</name>
-  <description>&#xD;
-        An application for UH Honors College Grand Challenges Forum.&#xD;
+  <description>
+        An application for UH Honors College Grand Challenges Forum.
     </description>
-  <author email="dash@uh.edu" href="http://housuggest.org/DASH">&#xD;
-        Data Analytics in Student Hands&#xD;
+  <author email="dash@uh.edu" href="http://housuggest.org/DASH">
+        Data Analytics in Student Hands
     </author>
   <content src="index.html"/>
   <access origin="*"/>
