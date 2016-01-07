@@ -140,8 +140,8 @@ fbService.factory('formService', ['Restangular', '$filter', function(Restangular
 
 fbService.factory('responseService', ['Restangular', '$filter', 'formService', function(Restangular, $filter, formService) {
     return {
-        getResponse: function(rid) {
-            return Restangular.all("formResponses").get(rid).then(function(data) {
+        getResponse: function (rid, fid) {
+            return Restangular.all("formResponses").get(rid, {"formId": fid}).then(function (data) {
                 return Restangular.stripRestangular(data);
             });
         },
@@ -175,10 +175,11 @@ fbService.factory('responseService', ['Restangular', '$filter', 'formService', f
                 return Restangular.stripRestangular(data);
             });
         },
-        createResponse: function(fid, uid) {
+        createResponse: function(fid, uid, sid) {
             return Restangular.all("formResponses").post({
                 "form_id": fid,
                 "owner_id": uid,
+                "study_id": sid,
                 "entries": []
             }).then(function(data) {
                 return eval(data);
@@ -186,19 +187,19 @@ fbService.factory('responseService', ['Restangular', '$filter', 'formService', f
         },
         newResponse: function(input, fid, uid, studyId) {
             var service = this;
-            return this.createResponse(fid, uid).then(function(id) {
-                return service.getResponse(id).then(function(response) {
+            return this.createResponse(fid, uid, studyId).then(function(id) {
+                return service.getResponse(id, fid).then(function(response) {
                     response.entries.forEach(function(entryObj) {
                         var inputObj = $filter('getById')(input, entryObj.question_id);
                         if (inputObj)
                             entryObj.value = inputObj.value;
                     });
-                    return service.updateResponse(id, response);
+                    return service.updateResponse(id, response, studyId);
                 })
             });
         },
         updateResponse: function(id, form, studyId) {
-            return Restangular.all("formResponses").all(id).customPUT(form);
+            return Restangular.all("formResponses").all(id).customPUT(form, "", {removeActiveStudy: studyId});
         },
         deleteResponse: function(rid) {
             return Restangular.all("formResponses").one(rid).remove();
