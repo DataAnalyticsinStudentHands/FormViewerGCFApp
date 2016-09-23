@@ -73,7 +73,7 @@ databaseModule.config(
                 pageTitle: 'Home'
             },
             resolve: {
-                //Checks if a form needs to be filled out. 
+                //Checks if a form needs to be filled out.
                 //If the map is empty, stay in home, else go to the form.
                 checkForms: function(userService, $state) {
                     return userService.getMyUser().then(function(data) {
@@ -224,8 +224,8 @@ databaseModule.config(
         });
     });
 
-databaseModule.run(['Restangular', '$rootScope', 'Auth', '$q', '$state', '$builder', 'userService',
-    function(Restangular, $rootScope, Auth, $q, $state, $builder, userService) {
+databaseModule.run(['Restangular', '$rootScope', 'Auth', '$q', '$state', '$builder', 'userService', 'ngNotify',
+    function(Restangular, $rootScope, Auth, $q, $state, $builder, userService, ngNotify) {
         Restangular.setBaseUrl("https://www.housuggest.org:8443/FormBuilder/");
         //Restangular.setBaseUrl("http://localhost:8080/RESTFUL-WS/");
 
