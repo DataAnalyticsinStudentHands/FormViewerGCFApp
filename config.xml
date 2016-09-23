@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="edu.uh.honors.grandchallenges" version="1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="edu.uh.honors.grandchallenges" version="1.1" xmlns="http://www.w3.org/ns/widgets">
   <name>Grand Challenges Forum</name>
   <description>
         An application for UH Honors College Grand Challenges Forum.
-  </description>
+    </description>
   <author email="dash@uh.edu" href="http://housuggest.org/DASH">
-        Data Analytics in Student Hands&#xD;
-  </author>
+        Data Analytics in Student Hands
+    </author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="*"/>
@@ -29,6 +29,11 @@
     <splash src="resources\android\splash\drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="resources\android\splash\drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources\android\splash\drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+  </platform>
+  <platform name="ios">
+    <preference name="StatusBarOverlaysWebView" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
+    <preference name="StatusBarStyle" value="default"/>
   </platform>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
   <preference name="SplashScreen" value="screen"/>

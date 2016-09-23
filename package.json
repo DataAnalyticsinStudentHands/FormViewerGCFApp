@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "FormViewerGCFApp",
   "version": "1.1.0",
@@ -19,3 +20,26 @@
     "shelljs": "^0.3.0"
   }
 }
+=======
+{
+  "name": "FormViewerGCFApp",
+  "version": "1.1.0",
+  "dependencies": {
+    "bower": "^1.6.3",
+    "gulp": "^3.5.6",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-wait": "0.0.2",
+    "ionic": "latest",
+    "cordova": "latest",
+    "gulp-deploy-git": "^0.5.1",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "~0.1.3",
+    "phonegap": "latest",
+    "shelljs": "^0.3.0"
+  }
+}
+>>>>>>> 9474e9c57b036c9ba5ff00a15eab4ff4e35ee12b
