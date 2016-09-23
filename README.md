@@ -1,7 +1,11 @@
-Form Viewer App
+Form Viewer GCF App - MultiUser Branch
 ===========
 
-FormBuilder is a dynamic form building web application that works with dynamic forms and provides sharing functionality. It communicates to a Java Backend located in FormBuilderBackend repo.
+Note MultiUser branch: this version of the apps wipes data after reload and is used on not persoanl devices by staff personnel to check in people who don't have a personal version of the app. The only difference to the FormViwerGCFApp is in [FormViewerGCFApp-Release/www/js/controllers.js](FormViewerGCFApp/www/js/controllers.js)
+
+FormViewer Apps are part of FormBuilder: a dynamic form building web application that works with dynamic forms and provides sharing functionality. It communicates to a Java Backend located in FormBuilderBackend repo.
+
+The FormViewerGCFApp is a specific app that uses just one form which allows to check in people for the Honors College Grand Challanges Forum.
 
 ### Getting Started
 1. Run `npm install`. This uses `package.js` and install local dependencies.
