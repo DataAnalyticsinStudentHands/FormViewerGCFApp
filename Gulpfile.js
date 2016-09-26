@@ -3,8 +3,8 @@ var sh = require('shelljs/global');
 var deploy = require('gulp-deploy-git');
 var clean = require('gulp-clean');
 var BUILD_DIR = "dist";
-var PROD_REPO = "ssh://webadmin@HouSuggest/~/FormViewer.git";
-var STAGING_REPO = "ssh://webadmin@HouSuggestDev/~/FormViewer.git";
+var PROD_REPO = "ssh://webadmin@HouSuggest/~/FormViewerGCF.git";
+var STAGING_REPO = "ssh://webadmin@HouSuggestDev/~/FormViewerGCF.git";
 
 gulp.task('clean', function() {
     return gulp.src(BUILD_DIR, {read: false}).pipe(clean());
